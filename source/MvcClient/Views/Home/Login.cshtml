@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+}
+
+<h2>Login</h2>
+<p>
+    <a href="logout">Logout</a>
+</p>
+
+<p>
+    <a href="apiaccess">API Acccess</a>
+</p>
+
+<dl>
+    @foreach (var claim in (User as System.Security.Claims.ClaimsPrincipal).Claims)
+    {
+        <dt>@claim.Type</dt>
+        <dd>@claim.Value</dd>
+    }
+</dl>
