@@ -1,15 +1,48 @@
 ﻿<!DOCTYPE html>
-<html>
+<html ng-app="identityDemo">
 <head>
-    <title></title>
 	<meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title ng-bind="pageTitle"></title>
+
     <link href="libs/bootstrap/bootstrap.min.css" rel="stylesheet" />
 </head>
 <body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="#/" class="navbar-brand">Application name</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav"></ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container body-content">
+        <div ui-view></div>
+        <hr />
+        <footer>
+            <p>&copy; {{currentYear}}</p>
+        </footer>
+    </div>
+
     <script src="libs/angular/angular.min.js"></script>
     <script src="libs/angular-ui/angular-ui-router.min.js"></script>
     <script src="libs/oidc/oidc-client.min.js"></script>
     <script src="libs/oidc/oidc-token-manager.min.js"></script>
 
+    <script src="app/app.js"></script>
+    <script src="app/routing.js"></script>
+    <script src="app/apiAccess/apiAccess.js"></script>
+    <script src="app/login/login.js"></script>
+    <script src="app/main/main.js"></script>
+    <script src="app/appServices/services/testApi.js"></script>
 </body>
 </html>
