@@ -130,9 +130,6 @@
     <Content Include="web\libs\bootstrap\bootstrap.min.css">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="web\libs\oidc\oidc-client.min.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="web\libs\oidc\oidc-token-manager.min.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
