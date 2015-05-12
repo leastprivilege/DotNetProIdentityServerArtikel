@@ -26,9 +26,29 @@ namespace Provider.Configuration
                 }
             };
 
+			var angular = new Client
+			{
+				ClientName = "AngularJS Client",
+				ClientId = "angular",
+				Flow = Flows.Implicit,
+
+				RedirectUris = new List<string>
+				{
+					"https://localhost:44300/"
+				},
+
+				AllowedScopes = new List<string>
+				{
+					"openid",
+					"user_data",
+					"webapi"
+				}
+			};
+
             return new List<Client>
             {
-                mvc
+                mvc,
+				angular
             };
         }
     }
