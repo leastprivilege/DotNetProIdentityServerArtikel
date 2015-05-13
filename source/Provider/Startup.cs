@@ -1,6 +1,5 @@
 ﻿using IdentityServer3.Core.Configuration;
 using IdentityServer3.Core.Services;
-using IdentityServer3.Core.Services.Default;
 using IdentityServer3.Core.Services.InMemory;
 using Microsoft.Owin;
 using Owin;
@@ -20,18 +19,11 @@ namespace Provider
                 .WriteTo.Trace()
                 .CreateLogger();
                 
-            // in-memory datenhaltung für users, scopes und clients
+            // in-memory datenhaltung für users, scopes, clients und CORS policys
             var users = new InMemoryUserService(Users.Get());
             var scopes = new InMemoryScopeStore(Scopes.Get());
             var clients = new InMemoryClientStore(Clients.Get());
-
-			// CORS
-			var cors = new DefaultCorsPolicyService
-			{
-				AllowedOrigins = new[] {
-					"https://localhost:44300"
-				}
-			};
+			var cors = new InMemoryCorsPolicyService(Clients.Get());
 
 			// konfigurieren der factory
 			var factory = new IdentityServerServiceFactory();

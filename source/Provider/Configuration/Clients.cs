@@ -34,7 +34,12 @@ namespace Provider.Configuration
 
 				RedirectUris = new List<string>
 				{
-					"https://localhost:44300/"
+					"https://localhost:44300/modal.html"
+				},
+
+				AllowedCorsOrigins = new List<string>
+				{
+					"https://localhost:44300"
 				},
 
 				AllowedScopes = new List<string>
