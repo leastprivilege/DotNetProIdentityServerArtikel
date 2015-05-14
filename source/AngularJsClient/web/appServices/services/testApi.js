@@ -5,16 +5,14 @@
      * @ngdoc service
      * @public
      *
-     * @param {Config} config
+     * @param webApiBaseUrl
      * @param $http
      * @param $q
      * @param {Security} security
      **/
-    function TestApi(config, $http, $q, security) {
-        var baseUrl = config.getBaseUrl();
-
+    function TestApi(webApiBaseUrl, $http, $q, security) {
         this.getTestAsync = function () {
-            return $http.get(baseUrl + 'test', {
+            return $http.get(webApiBaseUrl + 'test', {
                     headers: {
                         'Authorization': 'Bearer ' + security.getAccessToken()
                     }

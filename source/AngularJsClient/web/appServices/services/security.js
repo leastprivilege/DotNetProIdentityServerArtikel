@@ -5,12 +5,11 @@
      * @ngdoc service
      * @public
      *
-     * @param {Config} config 
      * @param $window
      * @param $state
      * @param $rootScope
      **/
-    function Security(config, $window, $state, $rootScope) {
+    function Security($window, $state, $rootScope) {
         var manager = new OidcTokenManager();
         var popup;
 

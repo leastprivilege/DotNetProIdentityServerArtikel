@@ -86,7 +86,6 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
-    <Content Include="web\appServices\services\config.js" />
     <Content Include="web\appServices\services\security.js" />
     <Content Include="web\libs\angular\angular.min.js.map" />
   </ItemGroup>
