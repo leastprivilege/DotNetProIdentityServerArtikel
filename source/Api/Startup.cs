@@ -31,6 +31,7 @@ namespace Api
             var webApiConfig = new HttpConfiguration();
 			webApiConfig.MapHttpAttributeRoutes();
 
+			// CORS aktivieren
 			var corsAttribute = new EnableCorsAttribute("https://localhost:44300", "*", "*");
 			webApiConfig.EnableCors(corsAttribute);
 
