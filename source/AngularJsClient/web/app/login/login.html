@@ -1,16 +1,13 @@
 ﻿<h2>Login</h2>
 <p>
-    <a ui-sref="logout">Logout</a>
+    <a href="#" ui-sref="logout">Logout</a>
 </p>
 
 <p>
-    <a ui-sref="apiaccess">API Acccess</a>
+    <a href="#" ui-sref="apiAccess">API Acccess</a>
 </p>
 
 <dl>
-    @foreach (var claim in (User as System.Security.Claims.ClaimsPrincipal).Claims)
-    {
-    <dt>@claim.Type</dt>
-    <dd>@claim.Value</dd>
-    }
+    <dt ng-repeat-start="(key, value) in profile">{{key}}</dt>
+    <dd ng-repeat-end>{{value}}</dd>
 </dl>
