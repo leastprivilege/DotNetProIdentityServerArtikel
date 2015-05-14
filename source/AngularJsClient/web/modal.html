@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+</head>
+<body>
+    <script src="libs/oidc/oidc-token-manager.min.js"></script>
+    <script>
+        var manager = new OidcTokenManager({
+            client_id: "angular",
+            redirect_uri: "https://localhost:44300/modal.html",
+            response_type: "id_token token",
+            scope: "openid user_data webapi",
+            authority: window.opener.oidc.authority
+        });
+
+        if (!window.location.hash) {
+            manager.redirectForToken();
+        }
+        else {
+            manager.processTokenCallbackAsync().then(function () {
+                window.opener.onDone();
+            }, function (error) {
+                console.log(error);
+            });
+        }
+    </script>
+</body>
+</html>
