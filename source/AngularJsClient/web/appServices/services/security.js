@@ -10,7 +10,10 @@
      * @param $rootScope
      **/
     function Security($window, $state, $rootScope) {
-        var manager = new OidcTokenManager();
+        var manager = new OidcTokenManager({
+            authority: 'https://localhost:44345/',
+            post_logout_redirect_uri: 'https://localhost:44300/'
+        });
         var popup;
 
         this.login = function () {
@@ -29,6 +32,10 @@
 
         this.getProfile = function () {
             return manager.profile;
+        };
+
+        this.logout = function () {
+            manager.redirectForLogout();
         };
 
         $rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams) {

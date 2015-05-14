@@ -13,6 +13,8 @@
         $rootScope.pageTitle = "Login";
 
         $scope.profile = security.getProfile();
+
+        $scope.logout = security.logout;
     }
 
     app.module.controller('loginController', LoginController);
