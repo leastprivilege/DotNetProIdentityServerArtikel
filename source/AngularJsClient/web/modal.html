@@ -20,7 +20,7 @@
         }
         else {
             manager.processTokenCallbackAsync().then(function () {
-                window.opener.onDone();
+                window.opener.onLogin();
             }, function (error) {
                 console.log(error);
             });

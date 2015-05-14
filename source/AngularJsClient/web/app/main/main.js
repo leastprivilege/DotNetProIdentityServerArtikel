@@ -7,10 +7,12 @@
      *
      * @param $rootScope
      * @param $scope
+     * @param {Security} security
      */
-    function MainController($rootScope, $scope) {
+    function MainController($rootScope, $scope, security) {
         $rootScope.pageTitle = "Index";
 
+        $scope.login = security.login;
     }
 
     app.module.controller('mainController', MainController);
