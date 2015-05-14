@@ -79,6 +79,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+    <Content Include="web\assets\site.css" />
     <Content Include="web\modal.html" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
