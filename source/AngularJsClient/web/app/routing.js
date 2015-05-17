@@ -9,7 +9,7 @@
      */
     function RoutingConfig($stateProvider, $urlRouterProvider) {
         $stateProvider
-            .state('main', getState('main', '/', false))
+            .state('main', getState('main', '/', true))
             .state('login', getState('login'))
             .state('apiAccess', getState('apiAccess'));
 
