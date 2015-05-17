@@ -7,14 +7,14 @@
      *
      * @param $rootScope
      * @param $scope
-     * @param {Security} security
+     * @param {TokenAuthentication} tokenAuthentication
      */
-    function LoginController($rootScope, $scope, security) {
+    function LoginController($rootScope, $scope, tokenAuthentication) {
         $rootScope.pageTitle = "Login";
 
-        $scope.profile = security.getProfile();
+        $scope.profile = tokenAuthentication.getProfile();
 
-        $scope.logout = security.logout;
+        $scope.logout = tokenAuthentication.logout;
     }
 
     app.module.controller('loginController', LoginController);

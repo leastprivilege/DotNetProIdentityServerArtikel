@@ -87,7 +87,7 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
-    <Content Include="web\appServices\services\security.js" />
+    <Content Include="web\appServices\services\tokenAuthentication.js" />
     <Content Include="web\libs\angular\angular.min.js.map" />
   </ItemGroup>
   <ItemGroup>

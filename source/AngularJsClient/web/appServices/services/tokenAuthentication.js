@@ -9,7 +9,7 @@
      * @param $state
      * @param $rootScope
      **/
-    function Security($window, $state, $rootScope) {
+    function TokenAuthentication($window, $state, $rootScope) {
         var manager = new OidcTokenManager({
             authority: 'https://localhost:44345/',
             post_logout_redirect_uri: 'https://localhost:44300/'
@@ -46,5 +46,5 @@
         });
     }
 
-    app.module.service('security', Security);
+    app.module.service('tokenAuthentication', TokenAuthentication);
 })();

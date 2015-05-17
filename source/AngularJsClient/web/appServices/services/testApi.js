@@ -8,13 +8,13 @@
      * @param webApiBaseUrl
      * @param $http
      * @param $q
-     * @param {Security} security
+     * @param {TokenAuthentication} tokenAuthentication
      **/
-    function TestApi(webApiBaseUrl, $http, $q, security) {
+    function TestApi(webApiBaseUrl, $http, $q, tokenAuthentication) {
         this.getTestAsync = function () {
             return $http.get(webApiBaseUrl + 'test', {
                     headers: {
-                        'Authorization': 'Bearer ' + security.getAccessToken()
+                        'Authorization': 'Bearer ' + tokenAuthentication.getAccessToken()
                     }
                 }).then(function (result) {
                     return result.data;
