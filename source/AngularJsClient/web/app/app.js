@@ -7,9 +7,8 @@
 
     app.module.constant('webApiBaseUrl', 'https://localhost:44347/');
 
-    app.module.run(function ($rootScope) {
-        $rootScope.pageTitle = "Identity Demo";
-        $rootScope.currentYear = new Date().getFullYear();
+    app.module.controller('appController', function ($scope) {
+        $scope.pageTitle = "Identity Demo";
+        $scope.currentYear = new Date().getFullYear();
     });
-
 })();
