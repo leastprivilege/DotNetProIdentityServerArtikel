@@ -42,6 +42,11 @@ namespace Provider.Configuration
 					"https://localhost:44300"
 				},
 
+				PostLogoutRedirectUris = new List<string>
+				{
+					"https://localhost:44300/"
+				},
+
 				AllowedScopes = new List<string>
 				{
 					"openid",
