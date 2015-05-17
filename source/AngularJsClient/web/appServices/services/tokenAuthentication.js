@@ -10,18 +10,21 @@
      * @param $rootScope
      **/
     function TokenAuthentication($window, $state, $rootScope) {
-        var manager = new OidcTokenManager({
-            authority: 'https://localhost:44345/',
-            post_logout_redirect_uri: 'https://localhost:44300/'
-        });
+        var manager;
         var popup;
 
+        loadManager();
+        function loadManager() {
+            manager = new OidcTokenManager($window.oidcConfiguration);
+        }
+
         this.login = function () {
-            popup = $window.open("modal.html", "_blank", "location=no,toolbar=no");
+            popup = $window.open('modal.html', '_blank', 'location=no,toolbar=no');
         };
 
         $window.onLogin = function () {
             // Popup schließen und zu Login-Seite navigieren
+            loadManager();
             popup.close();
             $state.go('login');
         };
