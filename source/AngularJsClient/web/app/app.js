@@ -11,6 +11,9 @@
         redirect_uri: "https://localhost:44300/modal.html",
         // Für Redirect-Methode:
         //redirect_uri: "https://localhost:44300/#/tokenReceived?x=x&",
+        // Hinweis: ?x=x& ist hier erforderlich, da der OIDC Token Manager keine Kenntnis über den
+        // Aufbau von Routen-Parametern für UI-Router besitzt und den Location-Hash starr an allen
+        // Kaufmannsund-Zeichen (&) splittet, und nicht am Fragezeichen
 
         // URI, auf die nach dem Logout zurückgeleitet wird
         post_logout_redirect_uri: 'https://localhost:44300/',
