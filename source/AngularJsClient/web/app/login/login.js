@@ -5,15 +5,12 @@
      * @constructor
      * @public
      *
-     * @param $rootScope
      * @param $scope
      * @param {TokenAuthentication} tokenAuthentication
      */
-    function LoginController($rootScope, $scope, tokenAuthentication) {
-        $rootScope.pageTitle = "Login";
-
+    function LoginController($scope, tokenAuthentication) {
+        $scope.page.title = "Login";
         $scope.profile = tokenAuthentication.getProfile();
-
         $scope.logout = tokenAuthentication.logout;
     }
 

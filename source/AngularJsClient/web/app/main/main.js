@@ -5,13 +5,11 @@
      * @constructor
      * @public
      *
-     * @param $rootScope
      * @param $scope
      * @param {TokenAuthentication} tokenAuthentication
      */
-    function MainController($rootScope, $scope, tokenAuthentication) {
-        $rootScope.pageTitle = "Index";
-
+    function MainController($scope, tokenAuthentication) {
+        $scope.page.title = "Index";
         $scope.login = tokenAuthentication.login;
     }
 

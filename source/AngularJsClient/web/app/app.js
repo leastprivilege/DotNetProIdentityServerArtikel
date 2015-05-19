@@ -36,7 +36,10 @@
     app.module.constant('webApiBaseUrl', 'https://localhost:44347/');
 
     app.module.controller('appController', function ($scope) {
-        $scope.pageTitle = "Identity Demo";
+        $scope.page = {
+            title: "Identity Demo"
+        };
+
         $scope.currentYear = new Date().getFullYear();
     });
 })();
