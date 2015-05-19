@@ -20,6 +20,9 @@
 
         this.login = function () {
             popup = $window.open('modal.html', '_blank', 'location=no,toolbar=no');
+
+            // Für Redirect-Methode:
+            //manager.redirectForToken();
         };
 
         $window.onLogin = function () {
@@ -28,6 +31,10 @@
             popup.close();
             $state.go('login');
         };
+
+        this.checkTokenAsync = function () {
+            return manager.processTokenCallbackAsync();
+        }
         
         this.getAccessToken = function () {
             return manager.access_token;

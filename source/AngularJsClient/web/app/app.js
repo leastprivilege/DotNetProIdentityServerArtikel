@@ -9,6 +9,8 @@
 
         // redirect URI an den token geschickt wird
         redirect_uri: "https://localhost:44300/modal.html",
+        // Für Redirect-Methode:
+        //redirect_uri: "https://localhost:44300/#/tokenReceived?x=x&",
 
         // URI, auf die nach dem Logout zurückgeleitet wird
         post_logout_redirect_uri: 'https://localhost:44300/',

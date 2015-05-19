@@ -34,7 +34,8 @@ namespace Provider.Configuration
 
 				RedirectUris = new List<string>
 				{
-					"https://localhost:44300/modal.html"
+					"https://localhost:44300/modal.html",
+					"https://localhost:44300/#/tokenReceived?x=x&"
 				},
 
 				AllowedCorsOrigins = new List<string>

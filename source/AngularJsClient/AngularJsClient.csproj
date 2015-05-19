@@ -79,6 +79,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+    <Content Include="web\app\tokenReceived\tokenReceived.html" />
+    <Content Include="web\app\tokenReceived\tokenReceived.js" />
     <Content Include="web\assets\site.css" />
     <Content Include="web\modal.html" />
     <None Include="Web.Debug.config">
