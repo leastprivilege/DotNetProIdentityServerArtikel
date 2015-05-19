@@ -4,6 +4,7 @@ using Owin;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 [assembly: OwinStartup(typeof(Api.Startup))]
 
@@ -28,10 +29,14 @@ namespace Api
 
             // web api konfiguration mit attribute routing
             var webApiConfig = new HttpConfiguration();
-            webApiConfig.MapHttpAttributeRoutes();
+			webApiConfig.MapHttpAttributeRoutes();
 
-            // kein anonymer zugriff erlaubt
-            webApiConfig.Filters.Add(new AuthorizeAttribute());
+			// CORS aktivieren
+			var corsAttribute = new EnableCorsAttribute("https://localhost:44300", "*", "*");
+			webApiConfig.EnableCors(corsAttribute);
+
+			// kein anonymer zugriff erlaubt
+			webApiConfig.Filters.Add(new AuthorizeAttribute());
 
             // web api einbinden
             app.UseWebApi(webApiConfig);

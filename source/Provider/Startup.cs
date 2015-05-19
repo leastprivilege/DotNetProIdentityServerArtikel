@@ -19,17 +19,19 @@ namespace Provider
                 .WriteTo.Trace()
                 .CreateLogger();
                 
-            // in-memory datenhaltung für users, scopes und clients
+            // in-memory datenhaltung für users, scopes, clients und CORS policys
             var users = new InMemoryUserService(Users.Get());
             var scopes = new InMemoryScopeStore(Scopes.Get());
             var clients = new InMemoryClientStore(Clients.Get());
+			var cors = new InMemoryCorsPolicyService(Clients.Get());
 
-            // konfigurieren der factory
-            var factory = new IdentityServerServiceFactory();
+			// konfigurieren der factory
+			var factory = new IdentityServerServiceFactory();
             
             factory.UserService = new Registration<IUserService>(users);
             factory.ScopeStore = new Registration<IScopeStore>(scopes);
             factory.ClientStore = new Registration<IClientStore>(clients);
+			factory.CorsPolicyService = new Registration<ICorsPolicyService>(cors);
 
             // identityserver3 middleware einbinden
             app.UseIdentityServer(new IdentityServerOptions

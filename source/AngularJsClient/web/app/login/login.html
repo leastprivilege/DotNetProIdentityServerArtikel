@@ -1,0 +1,13 @@
+﻿<h2>Login</h2>
+<p>
+    <a href="#" ng-click="logout()">Logout</a>
+</p>
+
+<p>
+    <a href="#" ui-sref="apiAccess">API Acccess</a>
+</p>
+
+<dl>
+    <dt ng-repeat-start="(key, value) in profile">{{key}}</dt>
+    <dd ng-repeat-end>{{value}}</dd>
+</dl>
