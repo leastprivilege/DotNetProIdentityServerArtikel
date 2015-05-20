@@ -37,9 +37,8 @@
 
     app.module.controller('appController', function ($scope) {
         $scope.page = {
-            title: "Identity Demo"
+            title: "Identity Demo",
+            currentYear: new Date().getFullYear()
         };
-
-        $scope.currentYear = new Date().getFullYear();
     });
 })();
