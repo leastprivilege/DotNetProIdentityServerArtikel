@@ -4,7 +4,7 @@
 	<meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title ng-bind="pageTitle"></title>
+    <title ng-bind="page.title"></title>
 
     <link href="assets/site.css" rel="stylesheet" />
     <link href="libs/bootstrap/bootstrap.min.css" rel="stylesheet" />
@@ -30,7 +30,7 @@
         <div ui-view></div>
         <hr />
         <footer>
-            <p>&copy; {{::currentYear}}</p>
+            <p>&copy; {{::page.currentYear}}</p>
         </footer>
     </div>
 
